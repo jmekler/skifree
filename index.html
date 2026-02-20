@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=600, height=600, user-scalable=no">
+  <title>SkiFree</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23111'/><rect x='12' y='2' width='8' height='5' fill='%23e8e8e8'/><rect x='13' y='5' width='6' height='2' fill='%23ffdd00'/><rect x='14' y='7' width='4' height='2' fill='%23f0c090'/><rect x='11' y='9' width='10' height='8' fill='%23e03030'/><rect x='12' y='10' width='3' height='4' fill='%23f04040'/><rect x='7' y='11' width='4' height='3' fill='%23e03030'/><rect x='21' y='11' width='4' height='3' fill='%23e03030'/><rect x='13' y='17' width='3' height='5' fill='%232255cc'/><rect x='17' y='17' width='3' height='5' fill='%232255cc'/><rect x='10' y='24' width='3' height='6' fill='%232299ff'/><rect x='20' y='24' width='3' height='6' fill='%232299ff'/><rect x='6' y='13' width='2' height='10' fill='%23aaa'/><rect x='24' y='13' width='2' height='10' fill='%23aaa'/></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash-screen" class="screen">
+    <div class="splash-container">
+      <h1 class="splash-title">SKI FREE</h1>
+      <div class="splash-subtitle">~ FREERIDE ~</div>
+      <div class="splash-controls">
+        <span>&#x2190; &#x2192; TURN</span>
+        <span>&#x2191; JUMP</span>
+        <span>&#x2193; SPEED UP</span>
+      </div>
+      <div class="splash-prompt">Press any key</div>
+      <div class="splash-best" id="splash-best"></div>
+    </div>
+  </div>
+
+  <!-- Menu Screen -->
+  <div id="menu-screen" class="screen hidden">
+    <div class="menu-container">
+      <h1 class="menu-title">SKI FREE</h1>
+      <div class="menu-subtitle">~ FREERIDE ~</div>
+      <div class="menu-stats" id="menu-stats"></div>
+      <button class="menu-btn focusable" data-action="resume-game">RESUME</button>
+      <button class="menu-btn focusable" data-action="new-game">NEW RUN</button>
+    </div>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen hidden">
+    <canvas id="game-canvas" width="600" height="600"></canvas>
+    <div id="game-overlay">
+      <div id="game-distance">0m</div>
+      <div id="game-speed"></div>
+    </div>
+    <div id="crash-msg" class="hidden">CRASHED! Press any key</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
